@@ -12,5 +12,14 @@ public class arrays {
         for (int i : ide){
             System.out.println(i);
         }
+
+        float [] mark = new float[5];
+        String [] mar = new String[5];
+
+        System.out.println("Here");
+
+        for (int i = marks.length-1;i >= 0; i--){
+            System.out.println(marks[i]);
+        }
     }
 }
