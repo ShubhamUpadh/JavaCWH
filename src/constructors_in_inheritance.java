@@ -23,15 +23,24 @@ class Derived1 extends Base1{
 
     public Derived1(){
         super(10);
-        System.out.println("I'm derived once from base class");
+        System.out.println("I'm derived once from base class and take only one argument");
     }
 
-    public int getY() {
-        return y;
+    public Derived1(int x,int k){
+        super(x);
+        this.y = k;
+        System.out.println("This constructor takes two arguments");
     }
+}
 
-    public void setY(int y) {
-        this.y = y;
+class ChildOfDerived extends Derived1{
+    int z;
+    ChildOfDerived(int x, int y, int z){
+        //System.out.println("Hererere");
+        super(x,y);
+        this.z = z;
+        System.out.println("Calling the child of Derived Constructor");
+
     }
 }
 //
@@ -45,6 +54,7 @@ class Derived1 extends Base1{
 public class constructors_in_inheritance {
     public static void main(String[] args) {
         //Base1  b1 = new Base1();
-        Derived1 d1 = new Derived1();
+        //Derived1 d1 = new Derived1();
+        ChildOfDerived cd1 = new ChildOfDerived(10, 20, 30);
     }
 }

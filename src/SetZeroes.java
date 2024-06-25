@@ -1,5 +1,5 @@
 public class SetZeroes {
-    static setZeroes(int[][] matrix){
+    static int setZeroes(int[][] matrix){
         int[] row = new int[matrix.length];
         int[] column = new int[matrix[0].length];
 
@@ -10,7 +10,9 @@ public class SetZeroes {
                     column[j] = -1;
                 }
             }
+
         }
+        return 10;
     }
     public static void main(String[] args) {
 
