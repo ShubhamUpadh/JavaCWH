@@ -46,4 +46,7 @@ class human extends Monkey implements basicAnimal{
 }
 
 public class abstractInterfacePractice {
+    public static void main(String[] args) {
+
+    }
 }
