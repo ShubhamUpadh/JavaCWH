@@ -4,6 +4,7 @@ interface cycle{
 }
 
 class HeroCycle implements cycle{
+    int speed;
     public HeroCycle(int speed){
         this.speed = speed;
     }
