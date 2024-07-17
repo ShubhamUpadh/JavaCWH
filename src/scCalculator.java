@@ -1,4 +1,4 @@
-package com.Calculator;
+package Calculators;
 
 public class scCalculator {
     public static void main(String[] args) {
