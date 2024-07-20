@@ -3,10 +3,11 @@ public class maxMin {
 
     }
     static int solution(int[] arr){
-        int min = arr[0], max = arr[0];
+        int mins = arr[0], maxs = arr[0];
         for (int i = 1; i < arr.length; i++){
-            min = Math.min(min. arr[i]);
-            max = Math.max(max, arr[i]);
+            mins = Math.min(mins, arr[i]);
+            maxs = Math.max(maxs, arr[i]);
         }
+        return mins + maxs;
     }
 }
