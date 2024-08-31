@@ -106,7 +106,7 @@ public class masaledaarCalc {
                     System.out.println(a + " x " + b + " = " + (a*b) );
                 }
                 else throw new maxInputException();
-
+            
         }
     }
 }

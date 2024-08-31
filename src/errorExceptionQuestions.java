@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+/*
 public class errorExceptionQuestions {
     public static void main(String[] args) {
         ques2(true);
@@ -51,3 +51,4 @@ public class errorExceptionQuestions {
 
     }
 }
+*/
