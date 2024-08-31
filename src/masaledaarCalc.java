@@ -45,7 +45,7 @@ class maxMultiplierException extends Exception{
 }
 
 public class masaledaarCalc {
-    public static void main(String[] args) throws invalidInputException, maxInputException, maxMultiplierException {
+    public static void main(String[] args) throws invalidInputException, maxInputException, maxMultiplierException, divideByZeroException {
         /* Create a custom calc which shows the following exceptions and operatons
         1. + -> Add
         2. - -> Sub
@@ -64,12 +64,13 @@ public class masaledaarCalc {
         String inp = sc.nextLine();
 
         String[] wordsArray = inp.split(" ");
-
+        int a= 5 , b = 5;
         if (wordsArray.length !=3){
             throw new invalidInputException();
         }
         try {
-            int a = Integer.parseInt(wordsArray[0]), b = Integer.parseInt(wordsArray[2]);
+            a = Integer.parseInt(wordsArray[0]);
+            b = Integer.parseInt(wordsArray[2]);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -82,6 +83,7 @@ public class masaledaarCalc {
                     System.out.println(a + " + " + b + " = " + (a+b) );
                 }
                 else throw new maxInputException();
+                break;
 
             case "-":
 
@@ -89,6 +91,7 @@ public class masaledaarCalc {
                     System.out.println(a + " - " + b + " = " + (a-b) );
                 }
                 else throw new maxInputException();
+                break;
 
             case "*":
 
@@ -96,6 +99,7 @@ public class masaledaarCalc {
                     System.out.println(a + " x " + b + " = " + (a*b) );
                 }
                 else throw new maxMultiplierException();
+                break;
 
 
             case "/":
@@ -106,7 +110,8 @@ public class masaledaarCalc {
                     System.out.println(a + " x " + b + " = " + (a*b) );
                 }
                 else throw new maxInputException();
-            
+                break;
+
         }
     }
 }
