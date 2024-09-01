@@ -86,6 +86,27 @@ class LinkedListCustom<E>{
         return false;
     }
 
+    public int addNext(E element, Node<E> node){
+        if (head == null){
+            addFirst(element);
+        }
+        Node<E> temp = head;
+        Node<E> newNode = new Node<>(null, element, null);
+        int pos = 0;
+        while (temp.next != null){
+            if (temp == node){
+                newNode.next = temp.next;
+                temp.next.prev = newNode;
+                temp.next = newNode;
+                return pos++;
+            }
+            temp = temp.next;
+            pos++;
+        }
+        temp.next = newNode;
+        newNode.prev = temp;
+        return pos;
+    }
 }
 
 public class linkedListCollection {
