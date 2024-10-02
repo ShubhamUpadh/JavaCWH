@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -7,10 +8,10 @@ public class calenderClass {
 //        System.out.println(newCal.getCalendarType());
 //        System.out.println(newCal.getTimeZone());
 //        System.out.println();
-        TimeZone tz = TimeZone.getDefault();
-        tz.setID("GMT - 07:00");
-        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
-        System.out.println(c.getTimeZone());
-
+//        TimeZone tz = TimeZone.getDefault();
+//        tz.setID("GMT - 07:00");
+//        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
+//        System.out.println(c.getTimeZone());
+        System.out.println(Arrays.toString(TimeZone.getAvailableIDs()));
     }
 }
