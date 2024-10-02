@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
-class Library{
+class Library2{
 
     private HashMap<String, Integer> issuedBooks= new HashMap<>();
 
@@ -16,7 +16,7 @@ class Library{
     }
 
     private String[] availableBooks = new String[100];
-    public Library(String[] books){
+    public Library2(String[] books){
         this.availableBooks = books;
     }
 
@@ -60,7 +60,7 @@ public class LibraryExercise {
                 "Harry Potter and the Sorcerer's Stone"
         };
 
-        Library onlineLibrary = new Library(books);
+        Library2 onlineLibrary = new Library2(books);
         int input = 0;
         int choice;
         String bookName;
