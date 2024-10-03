@@ -12,6 +12,15 @@ class MyGeneric<GenericType>{
     }
 }
 
+class genericHandling<Generic> {
+    public genericHandling(Generic g){
+        System.out.println("This class takes a generic type ");
+    }
+    public void sout(){
+        System.out.println("Invoked");
+    }
+}
+
 public class generics {
     public static void main(String[] args) {
         ArrayList al = new ArrayList();
