@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class simpleQueries {
 
@@ -17,6 +14,24 @@ public class simpleQueries {
     }
 
     static ArrayList<Integer> value(int[] arr){
+        ArrayList<Integer> G = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
+                int index = stack.pop();
+                G.add(arr[index]); // This element is the maximum for all subarrays ending at 'i'
+            }
+            stack.push(i);
+        }
+
+        // Process remaining elements in the stack
+        while (!stack.isEmpty()) {
+            G.add(arr[stack.pop()]);
+        }
+
+        return G;
+        /*
         ArrayList<Integer> G = new ArrayList<>();
         for (int i = 0; i < arr.length; i++){
             int maxV = arr[i];
@@ -34,6 +49,8 @@ public class simpleQueries {
         G.sort(Comparator.reverseOrder());
 
         return G;
+        */
+
 //        System.out.println(G);
     }
 
@@ -47,10 +64,12 @@ public class simpleQueries {
 
         ArrayList<Integer> G =  value(arr);
 
-        int[] arr2 = {1,2,3,4,5,6};
+        System.out.println(G);
 
-        for (int i : arr2){
-            if (i < G.size())  System.out.println(G.get(i));
-        }
+//        int[] arr2 = {1,2,3,4,5,6};
+//
+//        for (int i : arr2){
+//            if (i < G.size())  System.out.println(G.get(i));
+//        }
     }
 }
