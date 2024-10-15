@@ -4,6 +4,7 @@ public class medianOfArray {
     }
     static int median(int[] A, int[] B){
         int[] arr = new int[A.length + B.length];
+        return 10;
 
     }
 }

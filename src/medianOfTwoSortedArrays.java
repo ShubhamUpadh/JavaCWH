@@ -5,6 +5,7 @@ public class medianOfTwoSortedArrays {
         int n1 = arr1.length;
         int n2 = arr2.length;
         if (n1 > n2) return sol(arr2, arr1);
+        int n = n1 + n2;
         int low = 0, high = n1 - 1;
         //int mid;
         int left = (n1 + n2 + 1) / 2;
@@ -22,9 +23,10 @@ public class medianOfTwoSortedArrays {
             if (l1 <= r2 && l2 <= r1){
                 return (n % 2 == 0) ? (double) (max(r1,r2) + max(l1, l2))/2.0: max(l1, l2);
             }
-            else if (l1 > r2) high = mid - 1;
-            else low = mid + 1;
+            else if (l1 > r2) high = mid1 - 1;
+            else low = mid1 + 1;
         }
+        return 10d;
     }
     public static void main(String[] args) {
 

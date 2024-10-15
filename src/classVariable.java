@@ -2,6 +2,7 @@ class newClass{
     public static int a = 10;
     public int method1(){
         System.out.println("Initialised");
+        return 10;
     }
 }
 public class classVariable {
