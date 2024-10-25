@@ -29,7 +29,8 @@ public class bitManipulation2 {
 
     static int clearIthBit(int A, int i){
         {
-            return (A & ~(1<<i));
+            return A ^ (1<<i);
+            //return (A & ~(1<<i));
         }
     }
 
