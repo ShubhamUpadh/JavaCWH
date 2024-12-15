@@ -3,13 +3,9 @@ package BinaryTree;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Tree03HeightOfBT {
-    public static void main(String[] args) {
-        Node root = inputToTree();
-        System.out.println(height(root));
-    }
+class TreeUtility {
 
-    public static Node inputToTree() {
+    public Node inputToTree() {
         String ip;
         Scanner sc = new Scanner(System.in);
 
@@ -53,10 +49,6 @@ public class Tree03HeightOfBT {
         }
         return root;
     }
-    public static int height(Node root){
-        if (root == null){
-            return -1;
-        }
-        return 1 + Math.max(height(root.left), height(root.right));
-    }
+
+
 }
