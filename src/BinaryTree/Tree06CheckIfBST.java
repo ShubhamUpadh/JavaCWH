@@ -26,6 +26,8 @@ public class Tree06CheckIfBST {
         if (root.value < leftVal || root.value > rightVal) return false;
 
         return checkIfBST(root.left, leftVal, root.value) && checkIfBST(root.right,root.value, rightVal);
+        // yahan par humlog node ki value for (-Inf, parent node ki value) for left node
+        // aur right node ke liye (parent node ki value, + Inf ) me lie karna chahiye
 
     }
 
