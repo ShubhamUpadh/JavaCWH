@@ -2,15 +2,7 @@ package BinaryTree;
 
 import java.util.*;
 
-class Pair{
-    Node node;
-    int distance;
 
-    Pair(Node node, int distance){
-        this.node = node;
-        this.distance = distance;
-    }
-}
 
 public class Tree05TopDownView {
     public static void main(String[] args) {
