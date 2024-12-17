@@ -14,7 +14,10 @@ public class Tree04LevelOrderTraversal {
         Queue<Node> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         System.out.println();
+        int level = 0;
         while (!nodeQueue.isEmpty()){
+            System.out.println();
+            System.out.println("Next level = #"+level++);
             //System.out.println("NodeQueue Size" + nodeQueue.size());
             int a = nodeQueue.size();
             for (int i = 0; i < a; i++){
@@ -23,7 +26,6 @@ public class Tree04LevelOrderTraversal {
                 if (curr.left != null) nodeQueue.add(curr.left);
                 if (curr.right != null) nodeQueue.add(curr.right);
             }
-            //System.out.println("Next level");
         }
     }
 }

@@ -1,6 +1,8 @@
 package BinaryTree;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 class TreeUtility {
@@ -48,6 +50,25 @@ class TreeUtility {
             root.right = insertNode(value, root.right);
         }
         return root;
+    }
+
+    public void LevelOrder(Node root){
+        Queue<Node> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+        System.out.println();
+        int level = 0;
+        while (!nodeQueue.isEmpty()){
+            System.out.println();
+            System.out.println("Next level = #"+level++);
+            //System.out.println("NodeQueue Size" + nodeQueue.size());
+            int a = nodeQueue.size();
+            for (int i = 0; i < a; i++){
+                Node curr = nodeQueue.poll();
+                System.out.print(curr.value +" ");
+                if (curr.left != null) nodeQueue.add(curr.left);
+                if (curr.right != null) nodeQueue.add(curr.right);
+            }
+        }
     }
 
 
