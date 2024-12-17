@@ -117,7 +117,7 @@ public class Tree13NodesAtADistanceK {
                 if (currNode.right != null && !visitedNodes.contains(currNode.right)){
                     travellerQ.add(currNode.left);
                 }
-                if (!visitedNodes.contains(parentNode)){
+                if (parentNode != null && !visitedNodes.contains(parentNode)){
                     travellerQ.add(parentNode);
                 }
             }
