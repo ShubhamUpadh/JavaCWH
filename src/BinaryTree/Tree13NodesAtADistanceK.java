@@ -8,13 +8,13 @@ public class Tree13NodesAtADistanceK {
         Node root = treeUtility.inputToTree();
     }
 
-    static Node sol(Node root, int val,int distance){
+    static void sol(Node root, int val,int distance){
         HashMap<Node, Node> map = new HashMap<>();
 
         Queue<Node> q = new LinkedList<>();
         q.add(root);
 
-        Node searchNode;
+        Node searchNode = new Node(-1);
 
         while (!q.isEmpty()){
             int size = q.size();
@@ -83,7 +83,7 @@ public class Tree13NodesAtADistanceK {
         Queue<Node> q = new LinkedList<>();
         HashMap<Node, Node> map = new HashMap<>();
         q.add(root);
-        Node valNode;
+        Node valNode = new Node(-1);
         while (!q.isEmpty()){
             int size = q.size();
             for (int i = 0; i < size; i++){
