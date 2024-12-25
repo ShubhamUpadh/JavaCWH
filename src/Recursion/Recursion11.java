@@ -2,29 +2,45 @@ package Recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Recursion11 {
-    public static ArrayList<Integer> subsetSums(int[] arr) {
-        // code here
-        ArrayList<Integer> ans = new ArrayList<>();
-        subsetHelper(arr, 0, 0, ans);
-        return ans;
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,2,2};
+        List<List<Integer>> res = new ArrayList<>();
+        subSetHelper(arr,0, new boolean[arr.length] ,res, new ArrayList<>());
+        System.out.println(res);
     }
 
-    static void subsetHelper(int[] arr, int index, int runningSum,
-                      ArrayList<Integer> ans){
-        if (index == arr.length){
-            ans.add(new ArrayList(Arrays.asList(runningSum)));
-            return;
+    static void subSetHelper(int[] arr, int index, boolean[] isUsed, List<List<Integer>> res, ArrayList<Integer> ds){
+
+        System.out.println("index = " + index + " | ds = " + ds);
+        if(!res.contains(ds))res.add(new ArrayList<>(ds));
+        
+        for(int i = index; i < arr.length; i++){
+            //if (isUsed[i] || (i > 0 && arr[i] == arr[i-1] && !isUsed[i])) continue;
+            
+            ds.add(arr[i]);
+            isUsed[i] = true;
+            subSetHelper(arr, i + 1, isUsed, res, ds);
+            ds.remove(ds.size()-1);
+            isUsed[i] = false;
+
         }
 
-        for (int i = index; i < arr.length; i++){
-            //ds.add(arr[i]);
-            // runningSum += arr[i];
-            subsetHelper(arr, index + 1, runningSum + arr[i], ans);
-            //ds.removeLast();
-        }
 
+        
+        // if (!ds.isEmpty()) ds.remove(ds.size()-1);
+        // subSetHelper(arr, index + 1, res, ds);
+
+        // ds.add(arr[index]);
+        // subSetHelper(arr, index+1, res, ds);
+        // ds.remove(ds.size()-1);
+        
+        // ds.add(arr[index]);
+        // subSetHelper(arr, index+1, res, ds);
+        // ds.remove(ds.size()-1);
+        // subSetHelper(arr, index+1, res, ds);
 
     }
 }
