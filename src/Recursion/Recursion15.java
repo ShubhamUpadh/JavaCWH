@@ -8,8 +8,8 @@ public class Recursion15 {
         
     int n = 6;
     int[] arr = new int[n];
-    int power = 5;
-    int pawns = 3;
+    // int power = 5;
+    // int pawns = 3;
     //System.out.println(waysOfKeeping(arr, 0, power, pawns, 1));
 
     //System.out.println(isSafe(new int[]{1},new int[]{0}, 3, 1, 1));
