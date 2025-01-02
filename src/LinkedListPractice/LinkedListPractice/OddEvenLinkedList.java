@@ -14,6 +14,8 @@ public class OddEvenLinkedList {
     }
 
     static Node oddEvenOptimised(Node head){
+        //Two pointer approach, be VERY careful in the end range
+
         if (head == null || head.next == null || head.next.next ==null) return head;
         
         Node oddHead = head;
