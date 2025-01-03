@@ -2,17 +2,18 @@ package Recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 class couple{
-    int[] arr;
+    List<Integer> arr;
     int inv;
-    public couple(int[] arr, int inv){
+    public couple(List<Integer> arr, int inv){
         this.arr = arr;
         this.inv = inv;
     }
     @Override
     public String toString(){
-        return Arrays.toString(arr) + " | " + inv;
+        return arr + " | " + inv;
     }
 }
 
@@ -25,14 +26,12 @@ public class Recursion20 {
     }
 
     static int inversions(int[] arr){
-        return inversionHelper(arr, 0, arr.length-1).inv;
+        return inversionHelper(Arrays.asList(arr)).inv;
     }
 
-    static couple inversionHelper(int[] arr, int low, int high){
+    static couple inversionHelper(List<Integer> arr){
         
-        if (low == high) return new couple(arr, 0);
-        
-        int mid = (low+high)/2;
+        if (arr.size()==1) return new couple(arr, 0);
 
         couple leftCouple = inversionHelper(arr, low, mid);
 
