@@ -57,7 +57,7 @@ public class Graph16NumberOfDistinctIslands {
         q.add(new Pair(i, j));
         matrix[i][j] = 2;
 
-        String path = "";
+        String path = "O";
         
         while(!q.isEmpty()){
             
