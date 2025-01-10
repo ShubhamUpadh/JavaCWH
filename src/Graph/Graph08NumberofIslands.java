@@ -26,10 +26,10 @@ public class Graph08NumberofIslands {
 
         int i = 0, j = 0;
         int count = 0;
-        Queue<Pair> q = new LinkedList<>();
+        // Queue<Pair> q = new LinkedList<>();
 
-        int[] dRow = new int[]{-1,-1,-1,0,0,1,1,1};
-        int[] dCol = new int[]{-1,0,1,-1,1,-1,0,1};
+        // int[] dRow = new int[]{-1,-1,-1,0,0,1,1,1};
+        // int[] dCol = new int[]{-1,0,1,-1,1,-1,0,1};
 
         System.out.println(matrix.length + " | " + matrix[0].length);
 
