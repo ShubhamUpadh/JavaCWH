@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Graph21TopologicalSort {
@@ -53,6 +54,44 @@ public class Graph21TopologicalSort {
 
         retArr[lastIndex] = node;
         return lastIndex - 1;
+    }
+
+    static int[] topologicalSortBFS(List<List<Integer>> ls){
+        
+        Queue<Integer> q = new LinkedList<>();
+        int[] inEdges = new int[ls.size()];
+
+        for (int i = 0; i < ls.size(); i++){
+            for(int node : ls.get(i)){
+                inEdges[node]++;
+            }
+        }
+
+        for (int i = 0; i < inEdges.length; i++){
+            if (inEdges[i] == 0) q.add(i);
+        }
+
+        int[] sorted = new int[ls.size()];
+        int index = 0; 
+        boolean[] isAdded = new boolean[ls.size()];
+
+        while (!q.isEmpty()){
+            int curr = q.poll();
+            sorted[index] = curr;
+            index++;
+            for (int node : ls.get(curr)){
+                if (isAdded[node]) continue;
+                if (!isAdded[node]){
+                    inEdges[node]--;
+                    if (inEdges[node] == 0){
+                        q.add(node);
+                        isAdded[node] = true;
+                    }
+                }
+            }
+        }
+
+        return sorted;
     }
 
 

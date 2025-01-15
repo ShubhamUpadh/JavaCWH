@@ -60,4 +60,26 @@ public class Graph22KahnTopographicalSort {
         }
         return res;
     }
+
+    static List<Integer> topoSortDFS(List<List<Integer>> adjList){
+        List<Integer> ans = new ArrayList<>();
+        boolean[] isVisited = new boolean[adjList.size()];
+        for (int i = 0; i < adjList.size(); i++){
+            if (!isVisited[i]) helper(adjList, ans, isVisited, i);
+        }
+        return ans.reversed();
+    }
+
+    static void helper(List<List<Integer>> adjList, List<Integer> ans, boolean[] isVisited, int node){
+        if (adjList.get(node).size() == 0){ 
+            ans.add(node);
+            return;
+        }
+
+        for (Integer neighbours : adjList.get(node)){
+            isVisited[neighbours] = true;
+            helper(adjList, ans, isVisited, neighbours);
+        }
+        ans.add(node);
+    }
 }
